@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
+import { ProgressbarService } from './progressbar.service';
 
 @Component({
   selector: 'app-progressbar',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgressbarComponent implements OnInit {
 
-  constructor() { }
+  bufferValue: number;
+  mode: 'determinate' | 'indeterminate' | 'buffer' | 'query';
+  value: number;
+  visible: boolean;
+
+  private unsubscribeAll: Subject<any>;
+
+  constructor(private progressBarService: ProgressbarService) {
+    this.unsubscribeAll = new Subject();
+  }
 
   ngOnInit(): void {
+
   }
 
 }
