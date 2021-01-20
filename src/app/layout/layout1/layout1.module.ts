@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Layout1Component } from './layout1.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 
@@ -9,7 +10,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   declarations: [Layout1Component],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    MatProgressBarModule
   ],
   exports:[Layout1Component]
 })
