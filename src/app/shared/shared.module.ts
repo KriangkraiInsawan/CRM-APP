@@ -29,11 +29,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { FormbaseComponent } from './components/formbase/formbase.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [FormbaseComponent],
   imports: [
     CommonModule,
     FlexLayoutModule,
