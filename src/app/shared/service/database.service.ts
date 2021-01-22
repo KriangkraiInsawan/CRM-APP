@@ -14,7 +14,8 @@ export class DatabaseService {
 
   constructor(private httpClient: HttpClient) { }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-
+    this.getListData()
+    return;
   }
 
   getListData(pageIndex?: number, pageSize?: number) {

@@ -30,11 +30,13 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { FormbaseComponent } from './components/formbase/formbase.component';
+import { TablebaseComponent } from './components/formbase/tablebase.component';
+import { PipesModule } from './pipes/pipes.module';
 
 
 
 @NgModule({
-  declarations: [FormbaseComponent],
+  declarations: [FormbaseComponent,TablebaseComponent],
   imports: [
     CommonModule,
     FlexLayoutModule,
@@ -64,6 +66,8 @@ import { FormbaseComponent } from './components/formbase/formbase.component';
     MatSelectModule,
     MatStepperModule,
     MatAutocompleteModule,
+
+    PipesModule
   ],
   exports: [
     CommonModule,
@@ -95,6 +99,8 @@ import { FormbaseComponent } from './components/formbase/formbase.component';
     MatSelectModule,
     MatStepperModule,
     MatAutocompleteModule,
+
+    PipesModule
   ]
 })
 export class SharedModule { }
