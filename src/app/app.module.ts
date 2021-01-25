@@ -8,10 +8,12 @@ import { Layout1Module } from './layout/layout1/layout1.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppInterceptor } from './app.interceptor';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { LeftFormComponent } from './modules/left-form/left-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LeftFormComponent,
   ],
   imports: [
     BrowserModule,
