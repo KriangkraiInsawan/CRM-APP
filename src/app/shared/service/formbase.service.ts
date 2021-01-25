@@ -16,7 +16,7 @@ export class FormbaseService implements Resolve<any> {
   public layoutChangedObservable$ = this.layoutChanged$.asObservable();
 
   private lovGethered$ = new BehaviorSubject<any>({});
-  public lovGetheredObserevable$ = this.lovGethered$.asObservable();
+  public lovGetheredObservable$ = this.lovGethered$.asObservable();
   private layouts: any[];
 
   constructor(private httpClient: HttpClient) { }

@@ -32,6 +32,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { FormbaseComponent } from './components/formbase/formbase.component';
 import { TablebaseComponent } from './components/formbase/tablebase.component';
 import { PipesModule } from './pipes/pipes.module';
+import { DirectivesModule } from './directives/directives.module';
 
 
 
@@ -67,7 +68,8 @@ import { PipesModule } from './pipes/pipes.module';
     MatStepperModule,
     MatAutocompleteModule,
 
-    PipesModule
+    PipesModule,
+    DirectivesModule
   ],
   exports: [
     CommonModule,
@@ -100,7 +102,8 @@ import { PipesModule } from './pipes/pipes.module';
     MatStepperModule,
     MatAutocompleteModule,
 
-    PipesModule
+    PipesModule,
+    DirectivesModule
   ]
 })
 export class SharedModule { }

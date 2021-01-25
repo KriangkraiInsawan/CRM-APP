@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { CamelCaseToDashPipe } from './camelCaseToDash.pipe';
 import { FilterPipe } from './filter.pipe';
 import { GenByidPipe } from './genById.pipe';
@@ -22,8 +22,16 @@ import { TitleUrlPipe } from './titleUrl.pipe';
     ShotNamePipe,
     TitleUrlPipe
   ],
-  imports: [
-    CommonModule
+  imports: [],
+  exports:[
+    CamelCaseToDashPipe,
+    FilterPipe,
+    GenByidPipe,
+    HtmlToPlaintextPipe,
+    KeysPipe,
+    OrderByPipe,
+    ShotNamePipe,
+    TitleUrlPipe
   ]
 })
 export class PipesModule { }
