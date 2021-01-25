@@ -41,3 +41,11 @@ export class Formbase<T>{
     this.disabled = options.disabled || false;
   }
 }
+
+export class Dropdown extends Formbase<string>{
+  controlType = 'dropdown';
+}
+
+export class Textbox extends Formbase<string>{
+  controlType = 'textbox';
+}
