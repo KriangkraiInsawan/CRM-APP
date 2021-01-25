@@ -103,7 +103,10 @@ import { DirectivesModule } from './directives/directives.module';
     MatAutocompleteModule,
 
     PipesModule,
-    DirectivesModule
+    DirectivesModule,
+
+    FormbaseComponent,
+    TablebaseComponent
   ]
 })
 export class SharedModule { }

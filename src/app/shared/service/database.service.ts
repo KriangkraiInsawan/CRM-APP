@@ -19,6 +19,7 @@ export class DatabaseService {
   }
 
   getListData(pageIndex?: number, pageSize?: number) {
+    console.log('1')
     this.httpClient.get(environment.apiUrl + `api/saleorders`)
       .subscribe((data: any) => {
         this.onDatachanged$.next(data);
