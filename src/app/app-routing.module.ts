@@ -8,6 +8,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
   },
   {
+    path: 'chat',
+    loadChildren: () => import('./modules/chat/chat.module').then(m => m.ChatModule)
+  },
+  {
     path: 'contact',
     loadChildren: () => import('./modules/generic-master/generic-master.module').then(m => m.GenericMasterModule),
     data: { layouts: ['contact'] },
@@ -18,7 +22,7 @@ const routes: Routes = [
     loadChildren: () => import('./modules/generic-detail/generic-detail.module').then(m => m.GenericDetailModule),
     data: {
       masterApiUrl: 'contacts',
-      lookupFields: ['noteRelateID', 'relateToID',  'dealContact','contactAddress','contactPhoneNo', 'contactLineId'],
+      lookupFields: ['noteRelateID', 'relateToID', 'dealContact', 'contactAddress', 'contactPhoneNo', 'contactLineId'],
       layouts: ['notes', 'activitiestask', 'activitiesevent', 'activitiescall', 'deals']
     },
     canActivate: [AuthGuard]
@@ -71,7 +75,7 @@ const routes: Routes = [
     data: {
       masterApiUrl: 'fm-mk-06-dtl',
       lookupFields: ['hdr'],
-      layouts: ['bom','route', 'spec-result']
+      layouts: ['bom', 'route', 'spec-result']
     },
     canActivate: [AuthGuard]
   },
