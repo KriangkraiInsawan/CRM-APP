@@ -9,7 +9,7 @@ import { LeftFormComponent } from './left-form.component';
 
 
 @NgModule({
-  declarations: [ContactFormComponent, CustomerFormComponent, DealFormComponent],
+  declarations: [LeftFormComponent,ContactFormComponent, CustomerFormComponent, DealFormComponent],
   imports: [
     CommonModule,
     SharedModule

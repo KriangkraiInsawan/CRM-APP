@@ -53,6 +53,7 @@ export class GenericMasterService implements Resolve<any>{
   }
   updateData(layoutApiUrl: string, payload: any): Observable<any> {
     let subject = new Subject<any>();
+    console.log(layoutApiUrl)
     if (!payload.id) {
       this.httpClient.post(`${this.apiUrl}/${layoutApiUrl}`, payload)
         .subscribe((data) => {
