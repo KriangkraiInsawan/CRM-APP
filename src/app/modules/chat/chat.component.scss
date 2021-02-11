@@ -1,0 +1,143 @@
+.mat-drawer-container {
+  width: 100%;
+  min-height: calc(100vh - 105px);
+
+  .left-panel {
+    // padding: 10px;
+    width: 23%;
+  }
+
+  .right-panel {
+    width: 20%;
+  }
+
+  .content-panel {
+    width: auto;
+    height: 85vh;
+  }
+
+  .Header {
+    height: 35px;
+    padding-top: 5px;
+    border-width: 10px
+  }
+
+  .search {
+    width: 150px;
+    height: 30px;
+    margin-bottom: 4px;
+    margin-left: 50px;
+    box-shadow: black;
+  }
+
+  .NameChat {
+    background-color: white;
+    height: 60px;
+    // padding-top: 5px;
+    border-color: black;
+    border-width: 30px;
+    padding: 10px;
+  }
+
+  .app-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    // margin-bottom: 10px;
+    border-color: black;
+  }
+
+  .userlogo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    margin-top: 80px;
+    margin-left: 55px;
+    border-color: black;
+  }
+
+  .date {
+    font-size: 13px;
+    color: dimgray
+  }
+
+  .chat {
+    font-size: 13px;
+    color: dimgray
+  }
+
+  .example-icon {
+    text-align: left;
+  }
+
+  .toolbar {
+    top: 0px;
+    // background-color: white;
+    position: sticky;
+  }
+
+  .basic {
+    height: 30px;
+    background-color: white;
+  }
+
+  .lasttext {
+    font-size: 10px;
+    margin-top: 40px;
+    margin-left: 20px;
+
+  }
+
+  .input {
+    width: auto;
+    height: auto;
+  }
+
+}
+
+.proflie {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+}
+
+.leftchat {
+  padding: 10px;
+  max-width: 50vh;
+  word-wrap: break-word !important;
+  background-color: chartreuse;
+  height: auto;
+  border-radius: 15px;
+}
+
+.rightchat {
+  padding: 10px;
+  max-width: 50vh;
+  word-wrap: break-word !important;
+  background-color: chartreuse;
+  height: auto;
+  border-radius: 15px;
+}
+
+.chatlogo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding-right: 10px;
+  // margin-bottom: 10px;
+  border-color: black;
+}
+
+.toolbarheader {
+  position: sticky;
+  top: 0px;
+}
+.toolbarfooter{
+  position: sticky;
+  bottom: 0;
+  background-color:white;
+}
+mat-form-field{
+
+}

@@ -12,6 +12,12 @@ const routes: Routes = [
     loadChildren: () => import('./modules/chat/chat.module').then(m => m.ChatModule)
   },
   {
+    path: 'note',
+    loadChildren: () => import('./modules/generic-master/generic-master.module').then(m => m.GenericMasterModule),
+    data: { layouts: ['notes'] },
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'contact',
     loadChildren: () => import('./modules/generic-master/generic-master.module').then(m => m.GenericMasterModule),
     data: { layouts: ['contact'] },

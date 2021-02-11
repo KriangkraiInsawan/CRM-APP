@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { ChatComponent } from './chat.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
+import { ChatService } from './chat.service';
 
 const routes: Routes = [
   {
     path: '',
-    component:ChatComponent
+    component:ChatComponent,
+    resolve:[ChatService]
   }
 ]
 
