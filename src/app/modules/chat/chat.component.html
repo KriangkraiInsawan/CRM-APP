@@ -23,8 +23,6 @@
           <div class="date" fxFlexAlign="start end">yesterday</div>
         </div>
     </div>
-
-
   </mat-drawer>
 
   <mat-drawer-content class="content-panel">
@@ -63,55 +61,24 @@
         </div>
       </div>
     </mat-toolbar>
-    <div fxLayout="column" style="  padding: 10px;">
-      <div fxLayout="row">
+    <div fxFill fxLayout="column" style="  padding: 10px;">
+     <div *ngFor="let chat of messages">
+      <div  fxLayout="row" *ngFor="let item of chat.messaging">
         <div fxLayoutAlign="center center">
           <img class="chatlogo" src="../../../assets/logo/app-logo.png" alt="">
         </div>
         <p class="leftchat">
-          hi
+          {{item.message.text}}
         </p>
       </div>
       <div fxLayout="row" fxLayoutAlign="end">
-        <div>
+        <div *ngIf="chat.messaging_type">
           <p class="rightchat">
-            Enter the journey towards building your digital literacy skills. W3Schools' certificates prove fundamental
-            knowledge of web development. Start to build your profile by choosing a certification from our
-            acknowledged
-            selection
+            {{chat.message.text}}
           </p>
         </div>
       </div>
-      <div fxLayout="row" fxLayoutAlign="end">
-        <div>
-          <p class="rightchat">
-            Enter the journey towards building your digital literacy skills. W3Schools' certificates prove fundamental
-            knowledge of web development. Start to build your profile by choosing a certification from our
-            acknowledged
-            selection
-          </p>
-        </div>
-      </div>
-      <div fxLayout="row" fxLayoutAlign="end">
-        <div>
-          <p class="rightchat">
-            Enter the journey towards building your digital literacy skills. W3Schools' certificates prove fundamental
-            knowledge of web development. Start to build your profile by choosing a certification from our
-            acknowledged
-            selection
-          </p>
-        </div>
-      </div>
-      <div fxLayout="row" fxLayoutAlign="end">
-        <div>
-          <p class="rightchat">
-            Enter the journey towards building your digital literacy skills. W3Schools' certificates prove fundamental
-            knowledge of web development. Start to build your profile by choosing a certification from our
-            acknowledged
-            selection
-          </p>
-        </div>
-      </div>
+     </div>
     </div>
     <!-- <div fxFlex fxLayout="column ">
       <div fxFlex fxLayout="row" style="padding: 10px; ">
@@ -179,13 +146,16 @@
 
 
     </div> -->
-    <footer class="toolbarfooter">
-      <mat-form-field fxFlex appearance="outline">
-        <mat-label>Type Something</mat-label>
-        <input matInput placeholder="">
-        <mat-icon matSuffix>send</mat-icon>
-      </mat-form-field>
-    </footer>
+    <footer class="footer">
+      <div fxLayout="column">
+      <div fxLayout="row" fxLayoutAlign="start center" style="width: auto !important;" fxFlex>
+      <textarea matInput placeholder="Enter your message here" [(ngModel)]="message" (keyup.enter)="sendMessage()" fxFlex></textarea>
+      <button mat-flat-button (click)="sendMessage()">
+      <mat-icon>send</mat-icon>
+      </button>
+      </div>
+      </div>
+      </footer>
   </mat-drawer-content>
 
   <mat-drawer #drawer class="right-panel" mode="side" opened="true" position="end">

@@ -138,6 +138,20 @@
   bottom: 0;
   background-color:white;
 }
-mat-form-field{
+footer {
+  position: sticky;
+  bottom: 0 !important;
+  background-color: white;
+  textarea {
+  height: 49px;
+  background-color: white;
+  }
+  button{
+  height: 50px;
+  background-color: white;
 
-}
+  mat-icon{
+  color: gray;
+  }
+  }
+  }
