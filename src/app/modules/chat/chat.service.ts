@@ -70,6 +70,16 @@ export class ChatService implements Resolve<any> {
     })
   }
 
+  getProfile():Promise<any>{
+    console.log('pass')
+    return new Promise((resolve, reject) => {
+      this.httpClient.get('http://localhost:3000/getprofile').subscribe(res=>{
+        console.log(res)
+        resolve(res)
+      },reject)
+    })
+  }
+
   getServerEventSource(url: string) {
     return Observable.create(observer => {
       const eventSource = this.sseService.getEventSource(url);

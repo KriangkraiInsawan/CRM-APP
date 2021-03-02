@@ -7,15 +7,15 @@
         <input class="search" matInput type="search" placeholder="Search">
       </button>
     </mat-toolbar>
-    <div *ngFor="let item of data" class="NameChat" fxLayout="column" (click)="toggle()">
+    <div *ngFor="let item of profile" class="NameChat" fxLayout="column" (click)="toggle()">
         <div fxLayout="row" fxLayoutAlign="start" fxFlex>
           <div fxLayout="row" fxLayoutAlign="center" fxFlex="20">
-            <img class="app-logo" [src]="item.contactImg" alt="">
+            <!-- <img class="app-logo" [src]="item.snippet" alt=""> -->
           </div>
           <div fxLayout="column" fxLayoutAlign="start" fxFlex="80">
             <div>
               <strong>
-                {{item.contactName}}
+                {{item.participants.data}}
               </strong>
             </div>
             <div class="chat" fxFlexAlign="start">Hello</div>

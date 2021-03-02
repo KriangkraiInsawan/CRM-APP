@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 import { ChatService } from './chat.service';
 
 @Component({
@@ -15,6 +14,7 @@ export class ChatComponent implements OnInit {
   search = '';
   data: any;
   messages: any = [];
+  profile: any = [];
   message: string;
 
   private _unsubscribeAll: Subject<any>;
@@ -51,10 +51,11 @@ export class ChatComponent implements OnInit {
     this.data = this.chatService.getUserdata()
     this.chatService.getServerEventSource('http://localhost:3000/events')
       .subscribe((chat) => {
+        console.log(chat)
         let data = JSON.parse(chat.data);
         if (data.lenght > 0) {
           data.forEach(chatsend => {
-          //  console.log(chatsend)
+            //  console.log(chatsend)
             this.bodydata[0].contactChat.push(chatsend);
           });
           this.messages = this.bodydata[0].contactChat;
@@ -62,16 +63,23 @@ export class ChatComponent implements OnInit {
           console.log("hi")
           this.messages.push(data)
         }
-        // console.log(this.messages)
-
-        // if(data.type === 'qrSes'){
-        //   console.log(data)
-        // }
       });
+
+    this.chatService.getProfile().then((profilechat) => {
+      let profile = profilechat.data;
+      console.log(profile)
+      // this.profile = data
+      // console.log( this.profile)
+    })
+
+    // this.chatService.getServerEventSource('http://localhost:3000/getprofile')
+    // .subscribe((chat) =>{
+    //   console.log(chat)
+    // });
 
   }
 
- async sendMessage() {
+  async sendMessage() {
     let body = {
       "messaging_type": "RESPONSE",
       "recipient": {
