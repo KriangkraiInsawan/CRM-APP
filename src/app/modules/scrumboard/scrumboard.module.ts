@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ScrumboardComponent } from './scrumboard.component';
+import { BoardComponent } from './board/board.component';
+import { ListComponent } from './board/list/list.component';
 
 const routes: Routes = [
   {
@@ -25,7 +27,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [ScrumboardComponent],
+  declarations: [ScrumboardComponent, BoardComponent, ListComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
