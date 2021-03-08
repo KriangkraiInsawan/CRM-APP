@@ -12,6 +12,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/chat/chat.module').then(m => m.ChatModule)
   },
   {
+    path: 'scrumboard',
+    loadChildren: () => import('./modules/scrumboard/scrumboard.module').then(m => m.ScrumboardModule)
+  },
+  {
     path: 'note',
     loadChildren: () => import('./modules/generic-master/generic-master.module').then(m => m.GenericMasterModule),
     data: { layouts: ['notes'] },

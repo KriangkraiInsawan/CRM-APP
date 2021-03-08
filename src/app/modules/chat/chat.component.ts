@@ -66,8 +66,8 @@ export class ChatComponent implements OnInit {
       });
 
     this.chatService.getProfile().then((profilechat) => {
-      let profile = profilechat.data;
-      console.log(profile)
+      this.profile = profilechat.data;
+      console.log(this.profile)
       // this.profile = data
       // console.log( this.profile)
     })

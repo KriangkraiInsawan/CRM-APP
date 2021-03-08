@@ -7,7 +7,7 @@
         <input class="search" matInput type="search" placeholder="Search">
       </button>
     </mat-toolbar>
-    <div *ngFor="let item of profile" class="NameChat" fxLayout="column" (click)="toggle()">
+    <div  *ngFor="let item of profile" class="NameChat" fxLayout="column" (click)="toggle()">
         <div fxLayout="row" fxLayoutAlign="start" fxFlex>
           <div fxLayout="row" fxLayoutAlign="center" fxFlex="20">
             <!-- <img class="app-logo" [src]="item.snippet" alt=""> -->
@@ -15,10 +15,10 @@
           <div fxLayout="column" fxLayoutAlign="start" fxFlex="80">
             <div>
               <strong>
-                {{item.participants.data}}
+                {{item.senders.data[0].name}}
               </strong>
             </div>
-            <div class="chat" fxFlexAlign="start">Hello</div>
+            <div class="chat" fxFlexAlign="start">{{item.snippet}}</div>
           </div>
           <div class="date" fxFlexAlign="start end">yesterday</div>
         </div>
