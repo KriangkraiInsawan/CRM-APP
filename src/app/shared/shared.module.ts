@@ -33,6 +33,7 @@ import { FormbaseComponent } from './components/formbase/formbase.component';
 import { TablebaseComponent } from './components/formbase/tablebase.component';
 import { PipesModule } from './pipes/pipes.module';
 import { DirectivesModule } from './directives/directives.module';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 
@@ -67,6 +68,7 @@ import { DirectivesModule } from './directives/directives.module';
     MatSelectModule,
     MatStepperModule,
     MatAutocompleteModule,
+    MatTooltipModule,
 
     PipesModule,
     DirectivesModule
@@ -101,6 +103,7 @@ import { DirectivesModule } from './directives/directives.module';
     MatSelectModule,
     MatStepperModule,
     MatAutocompleteModule,
+    MatTooltipModule,
 
     PipesModule,
     DirectivesModule,

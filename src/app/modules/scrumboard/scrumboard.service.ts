@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +14,6 @@ export class ScrumboardService {
 
   onBoardsChanged: BehaviorSubject<any>;
   onBoardChanged: BehaviorSubject<any>;
-  apiUrl:string = `${environment.apiUrl}api`;
 
   /**
    * Constructor
@@ -28,13 +26,7 @@ export class ScrumboardService {
         this.onBoardsChanged = new BehaviorSubject([]);
         this.onBoardChanged = new BehaviorSubject([]);
    }
-     /**
- * Resolver
- *
- * @param {ActivatedRouteSnapshot} route
- * @param {RouterStateSnapshot} state
- * @returns {Observable<any> | Promise<any> | any}
- */
+
 
       resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
         this.routeParams = route.params;
@@ -51,14 +43,10 @@ export class ScrumboardService {
         });
       }
 
-  /**
-   * Get boards
-   *
-   * @returns {Promise<any>}
-   */
+
    getBoards(): Promise<any> {
     return new Promise((resolve, reject) => {
-      this._httpClient.get('api/scrumboard-boards')
+      this._httpClient.get('api/scrumboard')
         .subscribe((response: any) => {
           this.boards = response;
           console.log(this.boards)
@@ -76,7 +64,7 @@ export class ScrumboardService {
    */
      getBoard(boardId): Promise<any> {
       return new Promise((resolve, reject) => {
-        this._httpClient.get('api/scrumboard-boards/' + boardId)
+        this._httpClient.get('api/scrumboard/' + boardId)
           .subscribe((response: any) => {
             this.board = response;
             this.onBoardChanged.next(this.board);

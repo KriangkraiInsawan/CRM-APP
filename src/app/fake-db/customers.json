@@ -1,0 +1,19 @@
+[
+  {
+    "id": "1",
+    "customerName": "้อาจารย์เเดงกีต้า",
+    "customerPhoneNo": "088-7888888",
+    "customerWebSite": "www.guitarTH.com",
+    "customerOwner": "อาจารย์หนู",
+    "customerAddress": "44/1 ต.จันเสน"
+  },
+
+  {
+    "id": "2",
+    "customerName": "้อาจารย์ดำมือเบส",
+    "customerPhoneNo": "089-9999989",
+    "customerWebSite": "www.guitarTH.com",
+    "customerOwner": "อาจารย์เเดง",
+    "customerAddress": "55/1 ต.ไก่กา"
+  }
+]

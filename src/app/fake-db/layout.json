@@ -1,0 +1,1446 @@
+[
+  {
+    "key": "login",
+    "value": "เข้าสู่ระบบ",
+    "order": 1,
+    "table": {},
+    "forms": [
+      {
+        "controlType": "textbox",
+        "key": "email",
+        "label": "Email",
+        "type": "email",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "password",
+        "label": "Password",
+        "type": "password",
+        "value": "",
+        "required": true,
+        "order": 2,
+        "options": []
+      }
+    ]
+  },
+  {
+    "key": "companies",
+    "value": "ข้อมูลบริษัท",
+    "order": 1,
+    "table": {
+      "displayedColumns": [
+        "companyCode",
+        "companyName",
+        "isActive",
+        "menu"
+      ],
+      "columns": [
+        {
+          "key": "companyCode",
+          "value": "รหัสบริษัท"
+        },
+        {
+          "key": "companyName",
+          "value": "ชื่อบริษัท"
+        },
+        {
+          "key": "isActive",
+          "value": "สถานะใช้งาน"
+        }
+      ]
+    },
+    "forms": [
+      {
+        "key": "id",
+        "value": null
+      },
+      {
+        "controlType": "textbox",
+        "key": "companyCode",
+        "label": "รหัสบริษัท",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "companyName",
+        "label": "ชื่อบริษัท",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 2,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "taxID",
+        "label": "Tax ID",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 3,
+        "options": []
+      },
+      {
+        "controlType": "textarea",
+        "key": "companyAddress",
+        "label": "ที่อยู่",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 4,
+        "options": []
+      },
+      {
+        "controlType": "checkbox",
+        "key": "isActive",
+        "label": "สถานะ",
+        "value": true,
+        "required": true,
+        "order": 1,
+        "options": []
+      }
+    ]
+  },
+  {
+    "key": "notes",
+    "value": "บันทึกโน๊ต",
+    "order": 1,
+    "table": {
+      "displayedColumns": [
+        "noteTitle",
+        "noteSubject",
+        "menu"
+      ],
+      "columns": [
+        {
+          "key": "noteTitle",
+          "value": "Title"
+        },
+        {
+          "key": "noteSubject",
+          "value": "Subject"
+        }
+      ]
+    },
+    "forms": [
+      {
+        "key": "id",
+        "value": null
+      },
+      {
+        "controlType": "textbox",
+        "key": "noteTitle",
+        "label": "Title",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textarea",
+        "key": "noteSubject",
+        "label": "Subject",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "lookup",
+        "key": "noteRelateID",
+        "label": "RelateTo",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "lov": "relateTo"
+      },
+      {
+        "controlType": "lookup",
+        "key": "dealID",
+        "label": "DealID",
+        "type": "text",
+        "value": "",
+        "required": false,
+        "order": 1,
+        "options": [],
+        "lov": "deals"
+      }
+    ]
+  },
+  {
+    "key": "activitiestask",
+    "value": "Task",
+    "order": 1,
+    "table": {
+      "displayedColumns": [
+        "activityName",
+        "activityDate",
+        "isCompleted",
+        "isHighPriority",
+        "menu"
+      ],
+      "columns": [
+        {
+          "key": "activityName",
+          "value": "ชื่องาน"
+        },
+        {
+          "key": "activityDate",
+          "value": "วันที่"
+        },
+        {
+          "key": "isCompleted",
+          "value": "เมื่อเสร็จสิ้น"
+        },
+        {
+          "key": "isHighPriority",
+          "value": "สำคัญมาก"
+        },
+        {
+          "key": "relateToID",
+          "value": "ผู้ที่กี่ยวข้อง"
+        }
+      ]
+    },
+    "forms": [
+      {
+        "key": "id",
+        "value": null
+      },
+      {
+        "controlType": "textbox",
+        "key": "activityName",
+        "label": "ชื่องาน",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1
+      },
+      {
+        "controlType": "datepicker",
+        "key": "activityDate",
+        "label": "วันที่",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "checkbox",
+        "key": "isRepeat",
+        "label": "เตือนซ้ำ",
+        "type": "text",
+        "value": false,
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "checkbox",
+        "key": "isReminde",
+        "label": "แจ้งเตือน",
+        "type": "text",
+        "value": false,
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "lookup",
+        "key": "relateToID",
+        "label": "ผู้ที่กี่ยวข้อง",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "lov": "relateTo"
+      },
+      {
+        "controlType": "textbox",
+        "key": "activityDescription",
+        "label": "คำอธิบาย",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "checkbox",
+        "key": "isHighPriority",
+        "label": "เมื่อความสำคัญสูง",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "checkbox",
+        "key": "isCompleted",
+        "label": "เมื่อเสร็จสิ้น",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      }
+    ]
+  },
+  {
+    "key": "users",
+    "value": "ข้อมูลผู้ใช้",
+    "order": 2,
+    "table": {
+      "displayedColumns": [
+        "firstName",
+        "email",
+        "userCompany",
+        "userRole",
+        "isActive",
+        "menu"
+      ],
+      "columns": [
+        {
+          "key": "firstName",
+          "value": "ชื่อ-สกุล"
+        },
+        {
+          "key": "email",
+          "value": "Email"
+        },
+        {
+          "key": "userCompany",
+          "value": "บริษัท"
+        },
+        {
+          "key": "userRole",
+          "value": "บทบาท"
+        },
+        {
+          "key": "isActive",
+          "value": "สถานะใช้งาน"
+        }
+      ]
+    },
+    "forms": [
+      {
+        "key": "id",
+        "value": null
+      },
+      {
+        "controlType": "textbox",
+        "key": "firstName",
+        "label": "ชื่อ",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "lastName",
+        "label": "นามสกุล",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "email",
+        "label": "Email",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "lookup",
+        "key": "userCompany",
+        "label": "บริษัท",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "lov": "companies"
+      },
+      {
+        "controlType": "dropdown",
+        "key": "userRole",
+        "label": "บทบาท",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": [
+          {
+            "key": "admin",
+            "value": "ผู้ดูแลระบบ"
+          },
+          {
+            "key": "user",
+            "value": "ผู้ใช้"
+          }
+        ]
+      },
+      {
+        "controlType": "checkbox",
+        "key": "isActive",
+        "label": "สถานะ",
+        "value": true,
+        "required": true,
+        "order": 1,
+        "options": []
+      }
+    ]
+  },
+  {
+    "key": "activitiesevent",
+    "value": "Event",
+    "order": 2,
+    "table": {
+      "displayedColumns": [
+        "activityName",
+        "activityDate",
+        "activityTimeStart",
+        "activityTimeEnd",
+        "relateToID",
+        "menu"
+      ],
+      "columns": [
+        {
+          "key": "activityName",
+          "value": "ชื่องาน"
+        },
+        {
+          "key": "activityDate",
+          "value": "งานเริ่มวันที่"
+        },
+        {
+          "key": "activityTimeStart",
+          "value": "ตั่งแต่เวลา"
+        },
+        {
+          "key": "activityTimeEnd",
+          "value": "ถึงเวลา"
+        },
+        {
+          "key": "isRepeat",
+          "value": "Repeat"
+        },
+        {
+          "key": "isReminde",
+          "value": "Reminde"
+        },
+        {
+          "key": "activityLocation",
+          "value": "สถานที่"
+        },
+        {
+          "key": "relateToID",
+          "value": "ผู้ที่กี่ยวข้อง"
+        }
+      ]
+    },
+    "forms": [
+      {
+        "key": "id",
+        "value": null
+      },
+      {
+        "controlType": "textbox",
+        "key": "activityName",
+        "label": "ชื่ออีเวนท์",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "lov": "relateTo"
+      },
+      {
+        "controlType": "datepicker",
+        "key": "activityDate",
+        "label": "วันที่",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "activityTimeStart",
+        "label": "ตั่งแต่",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "activityTimeEnd",
+        "label": "ถึง",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "checkbox",
+        "key": "isRepeat",
+        "label": "เตือนซ้ำ",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "checkbox",
+        "key": "isReminde",
+        "label": "แจ้งเตือน",
+        "value": true,
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textarea",
+        "key": "activityLocation",
+        "label": "พิกัดสถานที่",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "lookup",
+        "key": "relateToID",
+        "label": "ผู้ที่กี่ยวข้อง",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "lov": "relateTo"
+      }
+    ]
+  },
+  {
+    "key": "contact",
+    "value": "ข้อมูลผู้ติดต่อ",
+    "order": 3,
+    "table": {
+      "displayedColumns": [
+        "contactName",
+        "contactCompany",
+        "contactPhoneNo",
+        "contactEmail",
+        "contactLineId",
+        "menu"
+      ],
+      "columns": [
+        {
+          "key": "contactName",
+          "value": "ชื่อผู้ติดต่อ"
+        },
+        {
+          "key": "contactCompany",
+          "value": "บริษัท"
+        },
+        {
+          "key": "contactPhoneNo",
+          "value": "เบอร์ติดต่อ"
+        },
+        {
+          "key": "contactEmail",
+          "value": "อีเมล"
+        },
+        {
+          "key": "contactLineId",
+          "value": "ไลน์"
+        },
+        {
+          "key": "contactAddress",
+          "value": "ที่อยู่"
+        }
+      ]
+    },
+    "forms": [
+      {
+        "key": "id",
+        "value": null
+      },
+      {
+        "controlType": "textbox",
+        "key": "contactName",
+        "label": "ชื่อผู้ติดต่อ",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "lookup",
+        "key": "contactCompany",
+        "label": "ชื่อบริษัทลูกค้า",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "lov": "customers"
+      },
+      {
+        "controlType": "textbox",
+        "key": "contactPhoneNo",
+        "label": "เบอร์ติดต่อ",
+        "type": "number",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": [],
+        "maxlangh": ""
+      },
+      {
+        "controlType": "textbox",
+        "key": "contactEmail",
+        "label": "อีเมล",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "contactLineId",
+        "label": "ไลน์",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textarea",
+        "key": "contactAddress",
+        "label": "ที่อยู่",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      }
+    ]
+  },
+  {
+    "key": "contactnotes",
+    "value": "บันทึกโน๊ต",
+    "order": 3,
+    "table": {
+      "displayedColumns": [
+        "notesName",
+        "menu"
+      ],
+      "columns": [
+        {
+          "key": "notesName",
+          "value": "ชื่อบันทึก"
+        }
+      ]
+    },
+    "forms": []
+  },
+  {
+    "key": "contactactivities",
+    "value": "กิจกรรม",
+    "order": 3,
+    "table": {
+      "displayedColumns": [
+        "activitiesName",
+        "menu"
+      ],
+      "columns": [
+        {
+          "key": "activitiesName",
+          "value": "ชื่อกิจกรรม"
+        }
+      ]
+    },
+    "forms": []
+  },
+  {
+    "key": "contactdeals",
+    "value": "ดิล",
+    "order": 3,
+    "table": {
+      "displayedColumns": [
+        "dealsName",
+        "menu"
+      ],
+      "columns": [
+        {
+          "key": "dealsName",
+          "value": "ชื่อดิล"
+        }
+      ]
+    },
+    "forms": []
+  },
+  {
+    "key": "deals",
+    "value": "ข้อมูลข้อเสนอ",
+    "order": 3,
+    "table": {
+      "displayedColumns": [
+        "dealsName",
+        "dealsContactName",
+        "dealsCustomerName",
+        "dealsType",
+        "menu"
+      ],
+      "columns": [
+        {
+          "key": "dealsName",
+          "value": "ชื่อข้อเสนอ"
+        },
+        {
+          "key": "dealsContactName",
+          "value": "ชื่อผู้ติดต่อ"
+        },
+        {
+          "key": "dealsCustomerName",
+          "value": "บริษัท"
+        },
+        {
+          "key": "dealsType",
+          "value": "ลักษณะการสั่งซื้อ"
+        }
+      ]
+    },
+    "forms": [
+      {
+        "key": "id",
+        "value": null
+      },
+      {
+        "controlType": "textbox",
+        "key": "dealsName",
+        "label": "ความต้องการลูกค้า",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "lookup",
+        "key": "dealsContactName",
+        "label": "ชื่อผู้ติดต่อ",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "lov": "contacts"
+      },
+      {
+        "controlType": "lookup",
+        "key": "dealsCustomerName",
+        "label": "บริษัท",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "lov": "customers"
+      },
+      {
+        "controlType": "textarea",
+        "key": "contactAddress",
+        "label": "ที่อยู่ผู้ติดต่อ",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "contactPhoneNo",
+        "label": "เบอร์โทรผู้ติดต่อ",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "contactLineId",
+        "label": "Line IDผู้ติดต่อ",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "dropdown",
+        "key": "dealsType",
+        "label": "ลักษณะการสั่งซื้อ",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": [
+          {
+            "key": "ซื้อเฉพาะเนื้อสินค้า",
+            "value": "ซื้อเฉพาะเนื้อสินค้า"
+          },
+          {
+            "key": "สร้างแบรนด์/สินค้าสำเร็จรูป",
+            "value": "สร้างแบรนด์/สินค้าสำเร็จรูป"
+          },
+          {
+            "key": "ซื้อสินค้าสำเร็จรูป",
+            "value": "ซื้อสินค้าสำเร็จรูป"
+          },
+          {
+            "key": "อื่นๆ",
+            "value": "อื่นๆ"
+          }
+        ]
+      },
+      {
+        "controlType": "textbox",
+        "key": "dealUnitCost",
+        "label": "ราคาทุนโดยประมาณที่ตั้งไว้(ถ้ามี)",
+        "type": "text",
+        "value": "",
+        "required": false,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "dealsDetail",
+        "label": "รายละเอียด",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      }
+    ]
+  },
+  {
+    "key": "fm-mk-06",
+    "value": "ใบสั่งทำตัวอย่าง",
+    "order": 3,
+    "table": {
+      "displayedColumns": [
+        "dealsName",
+        "docNo",
+        "docDate",
+        "status",
+        "menu"
+      ],
+      "columns": [
+        {
+          "key": "dealsName",
+          "value": "ชื่อดีล"
+        },
+        {
+          "key": "docNo",
+          "value": "เลขที่เอกสาร"
+        },
+        {
+          "key": "docDate",
+          "value": "วันที่เอกสาร"
+        },
+        {
+          "key": "status",
+          "value": "สถานะ"
+        }
+      ]
+    },
+    "forms": [
+      {
+        "key": "id",
+        "value": null
+      },
+      {
+        "controlType": "textbox",
+        "key": "dealsName",
+        "label": "ชื่อดีล",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "docNo",
+        "label": "เลขที่เอกสาร",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "docDate",
+        "label": "วันที่เอกสาร",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "status",
+        "label": "สถานะ",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      }
+    ]
+  },
+  {
+    "key": "fm-mk-13",
+    "value": "ใบส่งตัวอย่าง",
+    "order": 3,
+    "table": {
+      "displayedColumns": [
+        "dealsID",
+        "docNo",
+        "docDate",
+        "status",
+        "menu"
+      ],
+      "columns": [
+        {
+          "key": "dealsID",
+          "value": "ดีล"
+        },
+        {
+          "key": "docNo",
+          "value": "เลขที่เอกสาร"
+        },
+        {
+          "key": "docDate",
+          "value": "วันที่เอกสาร"
+        },
+        {
+          "key": "status",
+          "value": "สถานะ"
+        }
+      ]
+    },
+    "forms": [
+      {
+        "key": "id",
+        "value": null
+      },
+      {
+        "controlType": "textbox",
+        "key": "dealsID",
+        "label": "ดีล",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "docNo",
+        "label": "เลขที่เอกสาร",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "docDate",
+        "label": "วันที่เอกสาร",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "status",
+        "label": "สถานะ",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      }
+    ]
+  },
+  {
+    "key": "fm-mk-11",
+    "value": "ใบเสนอราคา",
+    "order": 3,
+    "table": {
+      "displayedColumns": [
+        "dealsName",
+        "docNo",
+        "docDate",
+        "status",
+        "menu"
+      ],
+      "columns": [
+        {
+          "key": "dealsName",
+          "value": "ชื่อดีล"
+        },
+        {
+          "key": "docNo",
+          "value": "เลขที่เอกสาร"
+        },
+        {
+          "key": "docDate",
+          "value": "วันที่เอกสาร"
+        },
+        {
+          "key": "status",
+          "value": "สถานะ"
+        }
+      ]
+    },
+    "forms": [
+      {
+        "key": "id",
+        "value": null
+      },
+      {
+        "controlType": "textbox",
+        "key": "dealsName",
+        "label": "ชื่อดีล",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "docNo",
+        "label": "เลขที่เอกสาร",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "docDate",
+        "label": "วันที่เอกสาร",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "status",
+        "label": "สถานะ",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      }
+    ]
+  },
+  {
+    "key": "po",
+    "value": "ใบสั่งขาย (Sale Order)",
+    "order": 3,
+    "table": {
+      "displayedColumns": [
+        "dealsName",
+        "docNo",
+        "docDate",
+        "status",
+        "menu"
+      ],
+      "columns": [
+        {
+          "key": "dealsName",
+          "value": "ชื่อดีล"
+        },
+        {
+          "key": "docNo",
+          "value": "เลขที่เอกสาร"
+        },
+        {
+          "key": "docDate",
+          "value": "วันที่เอกสาร"
+        },
+        {
+          "key": "status",
+          "value": "สถานะ"
+        }
+      ]
+    },
+    "forms": [
+      {
+        "key": "id",
+        "value": null
+      },
+      {
+        "controlType": "textbox",
+        "key": "dealsName",
+        "label": "ชื่อดีล",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "docNo",
+        "label": "เลขที่เอกสาร",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "docDate",
+        "label": "วันที่เอกสาร",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "status",
+        "label": "สถานะ",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      }
+    ]
+  },
+  {
+    "key": "customer",
+    "value": "ข้อมูลลูกค้า",
+    "order": 3,
+    "table": {
+      "displayedColumns": [
+        "customerName",
+        "customerPhoneNo",
+        "customerWebSite",
+        "customerOwner",
+        "menu"
+      ],
+      "columns": [
+        {
+          "key": "customerName",
+          "value": "ชื่อบริษัท"
+        },
+        {
+          "key": "customerPhoneNo",
+          "value": "เบอร์ติดต่อ"
+        },
+        {
+          "key": "customerWebSite",
+          "value": "เว็บไซต์"
+        },
+        {
+          "key": "customerOwner",
+          "value": "ผู้รับผิดชอบ"
+        }
+      ]
+    },
+    "forms": [
+      {
+        "key": "id",
+        "value": null
+      },
+      {
+        "controlType": "textbox",
+        "key": "customerName",
+        "label": "ชื่อบริษัท",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "customerPhoneNo",
+        "label": "เบอร์ติดต่อ",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "customerWebSite",
+        "label": "เว็บไซต์",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textarea",
+        "key": "customerAddress",
+        "label": "ที่อยู่",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "lookup",
+        "key": "customerOwner",
+        "label": "ผู้รับผิดชอบ",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "lov": "users-sale"
+      }
+    ]
+  },
+  {
+    "key": "activitiescall",
+    "value": "Call",
+    "order": 3,
+    "table": {
+      "displayedColumns": [
+        "relateToID",
+        "activityDate",
+        "activityTimeStart",
+        "activityTimeEnd",
+        "menu"
+      ],
+      "columns": [
+        {
+          "key": "relateToID",
+          "value": "โทรหา/รับสาย"
+        },
+        {
+          "key": "activityDate",
+          "value": "วันที่"
+        },
+        {
+          "key": "activityTimeStart",
+          "value": "เวลา"
+        },
+        {
+          "key": "activityTimeEnd",
+          "value": "ถึง"
+        }
+      ]
+    },
+    "forms": [
+      {
+        "key": "id",
+        "value": null
+      },
+      {
+        "controlType": "lookup",
+        "key": "relateToID",
+        "label": "โทรหา/รับสาย จาก",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "lov": "relateTo"
+      },
+      {
+        "controlType": "datepicker",
+        "key": "activityDate",
+        "label": "วันที่",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "activityTimeStart",
+        "label": "ตั่งแต่เวลา",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "activityTimeEnd",
+        "label": "ถึงเวลา",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "checkbox",
+        "key": "isReminde",
+        "label": "แจ้งเตือน",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "dropdown",
+        "key": "activityCallType",
+        "label": "ประเภทการโทร",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": [
+          {
+            "key": "outbound",
+            "value": "โทรหา"
+          },
+          {
+            "key": "inbound",
+            "value": "รับสาย"
+          }
+        ]
+      },
+      {
+        "controlType": "lookup",
+        "key": "relateToID",
+        "label": "ผู้ที่กี่ยวข้อง",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "lov": "relateTo"
+      },
+      {
+        "controlType": "textarea",
+        "key": "activityDescription",
+        "label": "หัวข้อการสนทนา",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      }
+    ]
+  },
+  {
+    "key": "fm-mk-13-dtl",
+    "value": "ใบส่งตัวอย่าง",
+    "order": 3,
+    "table": {
+      "displayedColumns": ["code", "list", "qty", "isApprove", "remark", "menu"],
+      "columns": [
+        { "key": "code", "value": "Code" },
+        { "key": "list", "value": "List" },
+        { "key": "qty", "value": "Qty" },
+        { "key": "isApprove", "value": "Approve" },
+        { "key": "remark", "value": "Remark" }
+      ]
+    },
+    "forms": [
+      { "key": "id", "value": null },
+      {
+        "controlType": "textbox",
+        "key": "code",
+        "label": "Code",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "list",
+        "label": "List",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textbox",
+        "key": "qty",
+        "label": "Qty",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "checkbox",
+        "key": "isApprove",
+        "label": "Approve",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      },
+      {
+        "controlType": "textarea",
+        "key": "remark",
+        "label": "Remark",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "order": 1,
+        "options": []
+      }
+    ]
+  }
+]

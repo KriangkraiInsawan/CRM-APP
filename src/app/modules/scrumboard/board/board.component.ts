@@ -1,15 +1,18 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Subject } from 'rxjs';
 import { ScrumboardService } from '../scrumboard.service';
 import { takeUntil } from 'rxjs/operators';
 import { List } from '../list.model';
+import { Animations } from 'src/app/shared/animations';
 
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
-  styleUrls: ['./board.component.scss']
+  styleUrls: ['./board.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  animations   : Animations
 })
 export class BoardComponent implements OnInit, OnDestroy {
 

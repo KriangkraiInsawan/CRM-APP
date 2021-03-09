@@ -8,6 +8,8 @@ import { Layout1Module } from './layout/layout1/layout1.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppInterceptor } from './app.interceptor';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { FakeDbService } from './fake-db/fake-db.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,12 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     HttpClientModule,
 
 
-    Layout1Module
+    Layout1Module,
+
+    InMemoryWebApiModule.forRoot(FakeDbService, {
+      delay             : 0,
+      passThruUnknownUrl: true
+  }),
 
   ],
   providers: [
@@ -31,6 +38,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
      * ปิด ErrorHandler เมืออยู่ระหว่าง Development เพื่อ debug error
      */
     // { provide: ErrorHandler, useClass: AppErrorHandler },
+
   ],
   bootstrap: [AppComponent]
 })
