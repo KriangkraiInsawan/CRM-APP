@@ -12,6 +12,8 @@ import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatRippleModule } from '@angular/material/core';
+import { EditListNameComponent } from './board/list/edit-list-name/edit-list-name.component';
+import { AddListComponent } from './board/add-list/add-list.component';
 
 const routes: Routes = [
   {
@@ -35,7 +37,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [ScrumboardComponent, BoardComponent, ListComponent, CardComponent, AddCardComponent],
+  declarations: [ScrumboardComponent, BoardComponent, ListComponent, CardComponent, AddCardComponent, EditListNameComponent, AddListComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
