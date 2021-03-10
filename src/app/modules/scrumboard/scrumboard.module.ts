@@ -14,6 +14,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatRippleModule } from '@angular/material/core';
 import { EditListNameComponent } from './board/list/edit-list-name/edit-list-name.component';
 import { AddListComponent } from './board/add-list/add-list.component';
+import { SettingsComponent } from './board/sidenavs/settings/settings.component';
+import { EditBoardNameComponent } from './board/edit-board-name/edit-board-name.component';
 
 const routes: Routes = [
   {
@@ -37,7 +39,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [ScrumboardComponent, BoardComponent, ListComponent, CardComponent, AddCardComponent, EditListNameComponent, AddListComponent],
+  declarations: [ScrumboardComponent, BoardComponent, ListComponent, CardComponent, AddCardComponent, EditListNameComponent, AddListComponent, SettingsComponent, EditBoardNameComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
