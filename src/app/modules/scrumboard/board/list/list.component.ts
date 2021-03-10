@@ -6,6 +6,7 @@ import { takeUntil } from 'rxjs/operators';
 import { FusePerfectScrollbarDirective } from 'src/app/shared/directives/fuse-perfect-scrollbar.directive';
 import { Card } from '../../card.model';
 import { ScrumboardService } from '../../scrumboard.service';
+import { CardComponent } from './card/card.component';
 
 @Component({
   selector: 'scrumboard-board-list',
@@ -32,7 +33,9 @@ export class ListComponent implements OnInit, OnDestroy {
     private _activatedRoute: ActivatedRoute,
     private _scrumboardService: ScrumboardService,
     private _matDialog: MatDialog
-  ) { }
+  ) {
+    this._unsubscribeAll = new Subject();
+  }
   ngOnDestroy(): void {
     this._unsubscribeAll.next();
     this._unsubscribeAll.complete();
@@ -96,17 +99,17 @@ export class ListComponent implements OnInit, OnDestroy {
 * @param cardId
 */
   openCardDialog(cardId): void {
-    //     this.dialogRef = this._matDialog.open(ScrumboardCardDialogComponent, {
-    //         panelClass: 'scrumboard-card-dialog',
-    //         data      : {
-    //             cardId: cardId,
-    //             listId: this.list.id
-    //         }
-    //     });
-    //     this.dialogRef.afterClosed()
-    //         .subscribe(response => {
+    this.dialogRef = this._matDialog.open(CardComponent, {
+      panelClass: 'scrumboard-card-dialog',
+      data: {
+        cardId: cardId,
+        listId: this.list.id
+      }
+    });
+    this.dialogRef.afterClosed()
+      .subscribe(response => {
 
-    //         });
+      });
   }
   /**
 * On drop

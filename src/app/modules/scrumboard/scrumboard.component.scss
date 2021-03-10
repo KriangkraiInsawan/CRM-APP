@@ -1,5 +1,3 @@
-@import "../../shared/scss/app.scss";
-
 scrumboard {
     min-height: 100%;
 
@@ -33,7 +31,7 @@ scrumboard {
                 cursor: pointer;
 
                 &:hover:not(.add-new-board) {
-                    @include mat-elevation(8);
+                    // @include mat-elevation(8);
                 }
 
                 .board-name {

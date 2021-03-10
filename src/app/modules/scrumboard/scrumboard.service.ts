@@ -31,7 +31,7 @@ export class ScrumboardService {
       resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
         this.routeParams = route.params;
 
-        return new Promise((resolve, reject) => {
+        return new Promise<void>((resolve, reject) => {
           Promise.all([
             this.getBoards()
           ]).then(
@@ -64,6 +64,7 @@ export class ScrumboardService {
    */
      getBoard(boardId): Promise<any> {
       return new Promise((resolve, reject) => {
+        console.log("getboard")
         this._httpClient.get('api/scrumboard/' + boardId)
           .subscribe((response: any) => {
             this.board = response;
@@ -164,7 +165,7 @@ export class ScrumboardService {
          updateBoard(): Promise<any>
          {
              return new Promise((resolve, reject) => {
-                 this._httpClient.post('api/scrumboard-boards/' + this.board.id, this.board)
+                 this._httpClient.post('api/scrumboard/' + this.board.id, this.board)
                      .subscribe(response => {
                          this.onBoardChanged.next(this.board);
                          resolve(this.board);
@@ -197,7 +198,7 @@ export class ScrumboardService {
          createNewBoard(board): Promise<any>
          {
              return new Promise((resolve, reject) => {
-                 this._httpClient.post('api/scrumboard-boards/' + board.id, board)
+                 this._httpClient.post('api/scrumboard/' + board.id, board)
                      .subscribe(response => {
                          resolve(board);
                      }, reject);

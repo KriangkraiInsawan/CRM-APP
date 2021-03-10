@@ -11,6 +11,7 @@ import { BoardResolve, ScrumboardService } from './scrumboard.service';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatRippleModule } from '@angular/material/core';
 
 const routes: Routes = [
   {
@@ -21,7 +22,7 @@ const routes: Routes = [
     },
 },
 {
-  path: 'boards',
+  path: 'boards/:boardId/:boardUri',
   component: BoardComponent,
   resolve: {
     board: BoardResolve
@@ -41,8 +42,8 @@ const routes: Routes = [
     SharedModule,
     MatToolbarModule,
     MatTooltipModule,
-
-    // NgxDnDModule
+    MatRippleModule,
+    NgxDnDModule
   ],
   providers      : [
     ScrumboardService,

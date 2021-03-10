@@ -8,7 +8,7 @@ import { List } from '../list.model';
 import { Animations } from 'src/app/shared/animations';
 
 @Component({
-  selector: 'app-board',
+  selector: 'scrumboard-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss'],
   encapsulation: ViewEncapsulation.None,
