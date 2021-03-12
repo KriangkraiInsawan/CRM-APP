@@ -1,4 +1,3 @@
-import { animation } from '@angular/animations';
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -10,20 +9,24 @@ import { ScrumboardService } from '../../../scrumboard.service';
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  animations   : Animations
+  animations: Animations
 })
-export class SettingsComponent implements OnInit,OnDestroy {
+export class scrumboardSettingsComponent implements OnInit, OnDestroy {
 
   board: any;
   view: string;
 
+  private _unsubscribeAll: Subject<any>;
+
   constructor(
-    private scrumboardService: ScrumboardService,
-    private _unsubscribeAll: Subject<any>
+    private scrumboardService: ScrumboardService
   ) {
-            this.view = 'main';
-            this._unsubscribeAll = new Subject();
-   }
+    // Set the defaults
+    this.view = 'main';
+
+    // Set the private defaults
+    this._unsubscribeAll = new Subject();
+  }
   ngOnDestroy(): void {
     this._unsubscribeAll.next();
     this._unsubscribeAll.complete();
@@ -37,16 +40,14 @@ export class SettingsComponent implements OnInit,OnDestroy {
     });
   }
 
-  toggleCardCover(): void
-  {
-      this.board.settings.cardCoverImages = !this.board.settings.cardCoverImages;
-      this.scrumboardService.updateBoard();
+  toggleCardCover(): void {
+    this.board.settings.cardCoverImages = !this.board.settings.cardCoverImages;
+    this.scrumboardService.updateBoard();
   }
 
-  toggleSubscription(): void
-  {
-      this.board.settings.subscribed = !this.board.settings.subscribed;
-      this.scrumboardService.updateBoard();
+  toggleSubscription(): void {
+    this.board.settings.subscribed = !this.board.settings.subscribed;
+    this.scrumboardService.updateBoard();
   }
 
 }

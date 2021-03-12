@@ -1,4 +1,3 @@
-import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { LayoutsFakeDb } from './layouts';
 import { CompaniesFakeDb } from './companies';
@@ -16,6 +15,7 @@ import { ContactDealsFackDb } from './contact-deals';
 import { ContactNotesFackDb } from './contact-notes';
 import { ActivitiesFakeDb } from './activities';
 import { ScrumboardFakeDb } from 'src/app/fake-db/scrumboard';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'

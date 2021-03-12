@@ -1,11 +1,13 @@
 import { Component, Input, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { FuseConfirmDialogComponent } from 'src/app/shared/components/formbase/confirm-dialog/confirm-dialog.component';
 import { FusePerfectScrollbarDirective } from 'src/app/shared/directives/fuse-perfect-scrollbar.directive';
 import { Card } from '../../card.model';
 import { ScrumboardService } from '../../scrumboard.service';
+import { CardDialogComponent } from '../dialogs/card/card.component';
 import { CardComponent } from './card/card.component';
 
 @Component({
@@ -24,6 +26,8 @@ export class ListComponent implements OnInit, OnDestroy {
 
   @ViewChild(FusePerfectScrollbarDirective)
   listScroll: FusePerfectScrollbarDirective;
+
+  confirmDialogRef: MatDialogRef<FuseConfirmDialogComponent>;
 
   // Private
   private _unsubscribeAll: Subject<any>;
@@ -79,19 +83,19 @@ export class ListComponent implements OnInit, OnDestroy {
  *
  * @param listId
  */
-  removeList(): void {
-    //   this.confirmDialogRef = this._matDialog.open(FuseConfirmDialogComponent, {
-    //     disableClose: false
-    // });
+  removeList(listId): void {
+      this.confirmDialogRef = this._matDialog.open(FuseConfirmDialogComponent, {
+        disableClose: false
+    });
 
-    // this.confirmDialogRef.componentInstance.confirmMessage = 'Are you sure you want to delete the list and it\'s all cards?';
+    this.confirmDialogRef.componentInstance.confirmMessage = 'Are you sure you want to delete the list and it\'s all cards?';
 
-    // this.confirmDialogRef.afterClosed().subscribe(result => {
-    //     if ( result )
-    //     {
-    //         this._scrumboardService.removeList(listId);
-    //     }
-    // });
+    this.confirmDialogRef.afterClosed().subscribe(result => {
+        if ( result )
+        {
+            this._scrumboardService.removeList(listId);
+        }
+    });
   }
   /**
 * Open card dialog
@@ -99,7 +103,7 @@ export class ListComponent implements OnInit, OnDestroy {
 * @param cardId
 */
   openCardDialog(cardId): void {
-    this.dialogRef = this._matDialog.open(CardComponent, {
+    this.dialogRef = this._matDialog.open(CardDialogComponent, {
       panelClass: 'scrumboard-card-dialog',
       data: {
         cardId: cardId,

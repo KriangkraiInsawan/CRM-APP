@@ -60,7 +60,7 @@ export class BoardComponent implements OnInit, OnDestroy {
 */
   onBoardNameChanged(newName): void {
     this._scrumboardService.updateBoard();
-    this._location.go('/apps/scrumboard/boards/' + this.board.id + '/' + this.board.uri);
+    this._location.go('boards/' + this.board.id + '/' + this.board.uri);
   }
   /**
 * On drop

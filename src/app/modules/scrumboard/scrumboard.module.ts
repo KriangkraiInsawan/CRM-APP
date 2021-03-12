@@ -9,14 +9,16 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { AddCardComponent } from './board/list/add-card/add-card.component';
 import { BoardResolve, ScrumboardService } from './scrumboard.service';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatRippleModule } from '@angular/material/core';
 import { EditListNameComponent } from './board/list/edit-list-name/edit-list-name.component';
 import { AddListComponent } from './board/add-list/add-list.component';
-import { SettingsComponent } from './board/sidenavs/settings/settings.component';
+import { scrumboardSettingsComponent } from './board/sidenavs/settings/settings.component';
 import { EditBoardNameComponent } from './board/edit-board-name/edit-board-name.component';
-
+import { CardDialogComponent } from './board/dialogs/card/card.component';
+import { MatChipsModule } from '@angular/material/chips';
+import { LabelSelectorComponent } from './board/dialogs/label-selector/label-selector.component';
+import { FuseConfirmDialogModule } from 'src/app/shared/components/formbase/confirm-dialog/confirm-dialog.module';
 const routes: Routes = [
   {
     path: '',
@@ -24,35 +26,48 @@ const routes: Routes = [
     resolve: {
       scrumboard: ScrumboardService
     },
-},
-{
-  path: 'boards/:boardId/:boardUri',
-  component: BoardComponent,
-  resolve: {
-    board: BoardResolve
+  },
+  {
+    path: 'boards/:boardId/:boardUri',
+    component: BoardComponent,
+    resolve: {
+      board: BoardResolve
+    }
+  },
+  {
+    path: '**',
+    redirectTo: 'boards'
   }
-},
-{
-  path: '**',
-  redirectTo: 'boards'
-}
 ]
 
 @NgModule({
-  declarations: [ScrumboardComponent, BoardComponent, ListComponent, CardComponent, AddCardComponent, EditListNameComponent, AddListComponent, SettingsComponent, EditBoardNameComponent],
+  declarations: [ScrumboardComponent,
+    BoardComponent,
+    ListComponent,
+    CardComponent,
+    CardDialogComponent,
+    AddCardComponent,
+    EditListNameComponent,
+    AddListComponent,
+    scrumboardSettingsComponent,
+    EditBoardNameComponent,
+    LabelSelectorComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     SharedModule,
-    MatToolbarModule,
     MatTooltipModule,
     MatRippleModule,
-    NgxDnDModule
+    NgxDnDModule,
+    MatChipsModule,
+
+
+    FuseConfirmDialogModule,
   ],
-  providers      : [
+  providers: [
     ScrumboardService,
     BoardResolve
-],
-// entryComponents: [ScrumboardCardDialogComponent]
+  ],
+  entryComponents: [CardDialogComponent]
 })
 export class ScrumboardModule { }

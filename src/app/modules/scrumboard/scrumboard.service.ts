@@ -3,10 +3,8 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class ScrumboardService {
+@Injectable()
+export class ScrumboardService implements Resolve<any> {
 
   boards: any[];
   routeParams: any;
@@ -208,23 +206,14 @@ export class ScrumboardService {
 @Injectable()
 export class BoardResolve implements Resolve<any>
 {
-    /**
-     * Constructor
-     *
-     * @param {ScrumboardService} _scrumboardService
-     */
+
     constructor(
         private _scrumboardService: ScrumboardService
     )
     {
     }
 
-    /**
-     * Resolver
-     *
-     * @param {ActivatedRouteSnapshot} route
-     * @returns {Promise<any>}
-     */
+
     resolve(route: ActivatedRouteSnapshot): Promise<any>
     {
         return this._scrumboardService.getBoard(route.paramMap.get('boardId'));

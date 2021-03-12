@@ -28,6 +28,7 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
     this.board = this._activatedRoute.snapshot.data.board;
+    // console.log(this.board)
     this.card = this.board.cards.filter((card) => {
         return this.cardId === card.id;
     })[0];

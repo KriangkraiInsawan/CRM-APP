@@ -3,18 +3,18 @@
   <!-- LIST HEADER -->
   <div class="list-header" fxFlex fxLayout="row" fxLayoutAlign="space-between center">
 
-      <!-- <scrumboard-board-edit-list-name
+      <scrumboard-edit-list-name
           fxFlex="1 0 auto"
           [list]="list"
           (listNameChanged)="onListNameChanged($event)">
-      </scrumboard-board-edit-list-name> -->
+      </scrumboard-edit-list-name>
 
       <div fxFlex="0 1 auto">
           <button mat-icon-button class="list-header-option-button" [matMenuTriggerFor]="listMenu">
               <mat-icon>more_vert</mat-icon>
           </button>
           <mat-menu #listMenu="matMenu">
-              <!-- <button mat-menu-item (click)="removeList(list.id)">Remove List</button> -->
+              <button mat-menu-item (click)="removeList(list.id)">Remove List</button>
           </mat-menu>
       </div>
 
@@ -40,7 +40,7 @@
 
   <!-- NEW CARD BUTTON-->
   <div class="list-footer">
-      <!-- <scrumboard-board-add-card (cardAdded)="onCardAdd($event)"></scrumboard-board-add-card> -->
+      <scrumboard-add-card (cardAdded)="onCardAdd($event)"></scrumboard-add-card>
   </div>
   <!-- / NEW CARD BUTTON-->
 
